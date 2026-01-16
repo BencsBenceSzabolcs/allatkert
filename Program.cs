@@ -25,7 +25,7 @@ namespace allatkert
 
             public override string ToString()
             {
-                return "Az allat neve:" + Nev + ", faja:" + Faj + "Születési éve:" + SzuletesiEv + ", élőhelye:" + Elohely;
+                return "Az állat neve:" + Nev + ", faja:" + Faj + "Születési éve:" + SzuletesiEv + ", élőhelye:" + Elohely;
             }
 
             public int hanyeves()
@@ -52,6 +52,17 @@ namespace allatkert
                 }
             }
             Console.WriteLine($"A Szavannán élő állatok száma: {Szavanna}");
+
+            //Találd meg a legkorábban született állatot, (nem idén).
+            Allat legkorabbi = allatok[0];
+            foreach (var allat in allatok)
+            {
+                if (allat.SzuletesiEv < legkorabbi.SzuletesiEv)
+                {
+                    legkorabbi = allat;
+                }
+            }
+            Console.WriteLine($"A legkorábban született állat: {legkorabbi}");
         }
     }
 }
