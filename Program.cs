@@ -73,6 +73,15 @@ namespace allatkert
                     Console.WriteLine(allat);
                 }
             }
+            //Számold ki az állatok átlagéletkorát a jelenlegi év alapján, használd a hanyeves függvényt.
+            double atlageletkor = 0;
+            int osszeg = 0;
+            foreach (var allat in allatok)
+            {
+                osszeg += allat.hanyeves();
+            }
+            atlageletkor = (double)osszeg / allatok.Count;
+            Console.WriteLine($"Az állatok átlagéletkora: {atlageletkor}");
         }
     }
 }
