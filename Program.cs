@@ -35,6 +35,12 @@ namespace allatkert
         }
         static void Main(string[] args)
         {
+            List<Allat> allatok = new List<Allat>();
+            allatok.Add(new Allat("Leo", "Oroszlán", 2015, "Dzsungel"));
+            allatok.Add(new Allat("Molly", "Elefánt", 2010, "Esőerdő"));
+            allatok.Add(new Allat("Lajos", "Pingvin", 2018, "Jégmezők"));
+            allatok.Add(new Allat("Zazu", "Zebra", 2012, "Szavanna"));
+            allatok.Add(new Allat("Luna", "Tigris", 2014, "Erdő"));
         }
     }
 }
