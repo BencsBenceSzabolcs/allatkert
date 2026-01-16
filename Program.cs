@@ -41,6 +41,17 @@ namespace allatkert
             allatok.Add(new Allat("Lajos", "Pingvin", 2018, "Jégmezők"));
             allatok.Add(new Allat("Zazu", "Zebra", 2012, "Szavanna"));
             allatok.Add(new Allat("Luna", "Tigris", 2014, "Erdő"));
+
+            //Határozd meg, hány állat tartozik a „szavanna” élőhelyhez.
+            int Szavanna = 0;
+            foreach (var allat in allatok)
+            {
+                if (allat.Elohely == "Szavanna")
+                {
+                    Szavanna++;
+                }
+            }
+            Console.WriteLine($"A Szavannán élő állatok száma: {Szavanna}");
         }
     }
 }
