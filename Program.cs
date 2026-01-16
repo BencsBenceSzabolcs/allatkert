@@ -52,6 +52,7 @@ namespace allatkert
                 }
             }
             Console.WriteLine($"A Szavannán élő állatok száma: {Szavanna}");
+            Console.WriteLine("-------------------------------------------------------------------------");
 
             //Találd meg a legkorábban született állatot, (nem idén).
             Allat legkorabbi = allatok[0];
@@ -63,7 +64,7 @@ namespace allatkert
                 }
             }
             Console.WriteLine($"A legkorábban született állat: {legkorabbi}");
-
+            Console.WriteLine("-------------------------------------------------------------------------");
             //Listázd ki azokat az állatokat, amelyek 2015 után születtek.
             Console.WriteLine("2015 után született állatok:");
             foreach (var allat in allatok)
@@ -73,6 +74,7 @@ namespace allatkert
                     Console.WriteLine(allat);
                 }
             }
+            Console.WriteLine("-------------------------------------------------------------------------");
             //Számold ki az állatok átlagéletkorát a jelenlegi év alapján, használd a hanyeves függvényt.
             double atlageletkor = 0;
             int osszeg = 0;
@@ -82,6 +84,39 @@ namespace allatkert
             }
             atlageletkor = (double)osszeg / allatok.Count;
             Console.WriteLine($"Az állatok átlagéletkora: {atlageletkor}");
+            Console.WriteLine("-------------------------------------------------------------------------");
+            //Olvasd be konzolról egy új állat adatait. Ha még nincs ilyen nevű add hozzá, Ha van ilyen töröld a listából!
+            Console.WriteLine("Kérem, adja meg az állat nevét:");
+            string nev = Console.ReadLine();
+
+            Console.WriteLine("Kérem, adja meg az állat fajtáját: ");
+            string faj = Console.ReadLine();
+
+            Console.WriteLine("Kérem, add meg az állat születési évét: ");
+            int szuletesiEv = int.Parse(Console.ReadLine());
+
+            Console.WriteLine("Adja meg az állat élőhelyét: ");
+            string elohely = Console.ReadLine();
+
+            Allat ujallat = new Allat(nev, faj, szuletesiEv, elohely);
+            bool letezik = false;
+
+            foreach (var allat in allatok)
+            {
+                if (allat.Nev == ujallat.Nev)
+                {
+                    letezik = true;
+                    allatok.Remove(allat);
+                    Console.WriteLine("Az állat törölve lett.");
+                    break;
+                }
+            }
+
+            if (!letezik)
+            {
+                allatok.Add(ujallat);
+                Console.WriteLine("Az állat hozzá lett adva.");
+            }
         }
     }
 }
