@@ -40,7 +40,7 @@ namespace allatkert
             allatok.Add(new Allat("Molly", "Elefánt", 2010, "Esőerdő"));
             allatok.Add(new Allat("Lajos", "Pingvin", 2018, "Jégmezők"));
             allatok.Add(new Allat("Zazu", "Zebra", 2012, "Szavanna"));
-            allatok.Add(new Allat("Luna", "Tigris", 2014, "Erdő"));
+            allatok.Add(new Allat("Luna", "Tigris", 2016, "Erdő"));
 
             //Határozd meg, hány állat tartozik a „szavanna” élőhelyhez.
             int Szavanna = 0;
@@ -63,6 +63,16 @@ namespace allatkert
                 }
             }
             Console.WriteLine($"A legkorábban született állat: {legkorabbi}");
+
+            //Listázd ki azokat az állatokat, amelyek 2015 után születtek.
+            Console.WriteLine("2015 után született állatok:");
+            foreach (var allat in allatok)
+            {
+                if (allat.SzuletesiEv > 2015)
+                {
+                    Console.WriteLine(allat);
+                }
+            }
         }
     }
 }
